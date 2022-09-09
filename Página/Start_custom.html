@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang='en' class=''>
+  <head>
+    <meta charset='UTF-8'>
+    <title>Start Page</title>
+     <link rel="icon" type="image/x-icon" href="C:\Windows\WinSxS\amd64_microsoft-windows-sechealthui.appxmain_31bf3856ad364e35_10.0.19041.1503_none_27904351934ccf5e\AppAndBrowser.theme-dark.ico">
+    <style>
+        body {
+        background-color: rgb(29, 30, 33);
+        margin: 50px;
+      }
+
+      form {
+        background-color: rgb(20, 20, 20);
+        width: 400px;
+        height: 35px;
+        border-radius: 5px;
+        margin: auto;
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        border-radius: 10px;
+        box-shadow: 0px 0px 4px 2px #101010
+      }
+
+      input {
+        all: unset;
+        font: 13px system-ui;
+        color: rgb(184, 184, 184);
+        height: 100%;
+        width: 100%;
+        padding: 6px 10px;
+      }
+
+      ::placeholder {
+        color: rgb(184, 184, 184);
+        opacity: 0.7; 
+      }
+
+      svg {
+        color: rgb(184, 184, 184);
+        fill: currentColor;
+        width: 24px;
+        height: 24px;
+        padding: 10px;
+      }
+
+      button {
+        all: unset;
+        cursor: arrow;
+        width: 44px;
+        height: 44px;
+      }
+    </style>
+  </head>
+  <body>
+    <form role="search" id="form">
+      <input type="search" id="query" name="q" placeholder="Search Google" aria-label="Search through site content" autocomplete="off">
+      <button>
+        <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
+      </button>
+    </form>
+    <script>
+	window.onload = function() {
+            document.getElementById("query").focus();
+        }
+	    
+      const f = document.getElementById('form');
+      const q = document.getElementById('query');
+      const google = 'https://www.google.com/search?q=';
+
+      function submitted(event) {
+        event.preventDefault();
+        const url = google + '+' + q.value;
+        const win = window.open(url, '_self');
+      }
+
+      f.addEventListener('submit', submitted);
+    </script>
+  </body>
+  
+</html>
